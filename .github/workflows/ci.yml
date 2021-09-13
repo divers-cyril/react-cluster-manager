@@ -36,7 +36,7 @@ jobs:
       - run: npm list -g --depth=0
       - run: npm run build:dev
       - run: find dist -ls
-      - run: cd dist && tar -czf bundle.debug *
+      - run: cd dist && tar -czf ../bundle.debug *
       - name: Archive bundle debug
         uses: actions/upload-artifact@v2
         with:
@@ -46,7 +46,7 @@ jobs:
             bundle.debug
       - run: npm run build
       - run: find dist -ls
-      - run: cd dist && tar -czf bundle *
+      - run: cd dist && tar -czf ../bundle *
       - name: Archive bundle
         uses: actions/upload-artifact@v2
         with:
